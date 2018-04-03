@@ -21,9 +21,4 @@ class ArticleType extends AbstractType
             'data_class' => Article::class
         ]);
     }
-
-    public function getBlockPrefix()
-    {
-        return 'soft_uni_blog_bundle_article_type';
-    }
 }

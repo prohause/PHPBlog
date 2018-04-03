@@ -94,7 +94,7 @@ class Article
     }
 
     /**
-     * @param integer $authorId
+     * @param int $authorId
      *
      * @return Article
      */
