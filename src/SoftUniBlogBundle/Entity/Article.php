@@ -82,7 +82,7 @@ class Article
      * @return $this
      */
     public function setAuthor(User $author = null){
-        $this->$author = $author;
+        $this->author = $author;
         return $this;
     }
 
@@ -115,7 +115,7 @@ class Article
      */
     private function setSummary()
     {
-        $this->summary = substr($this->getContent(), 0, strlen($this->getContent() / 2)) . "...";
+        $this->summary = substr($this->getContent(), 0, strlen($this->getContent())/2) . "...";
     }
 
     /**
