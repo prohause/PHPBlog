@@ -26,7 +26,7 @@ class ArticleController extends Controller
 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()){
+        if ($form->isSubmitted() && $form->isValid()) {
             $article->setAuthor($this->getUser());
             $em = $this->getDoctrine()->getManager();
             $em->persist($article);
@@ -35,6 +35,19 @@ class ArticleController extends Controller
             return $this->redirectToRoute('blog_index');
         }
 
-        return $this->render('article/create.html.twig',array('form'=>$form->createView()));
+        return $this->render('article/create.html.twig', array('form' => $form->createView()));
+    }
+
+    /**
+     * @Route("/article/{id}",name = "article_view")
+     *
+     * @param $id
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function viewArticle($id)
+    {
+        $article = $this->getDoctrine()->getRepository(Article::class)->find($id);
+        return $this->render('article/article.html.twig', ['article' => $article]);
     }
 }
