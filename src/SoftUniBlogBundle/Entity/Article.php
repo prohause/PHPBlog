@@ -63,12 +63,6 @@ class Article
     private $author;
 
     /**
-     * @param \SoftUniBlogBundle\Entity\User $author
-     *
-     * @return Article
-     */
-
-    /**
      * Article constructor.
      */
     public function __construct()
@@ -77,9 +71,9 @@ class Article
     }
 
     /**
-     * @param User $author
+     * @param \SoftUniBlogBundle\Entity\User $author
      *
-     * @return $this
+     * @return Article
      */
     public function setAuthor(User $author = null){
         $this->author = $author;

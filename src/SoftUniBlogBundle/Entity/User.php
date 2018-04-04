@@ -67,7 +67,7 @@ class User implements UserInterface
     public function addPost(Article $article)
     {
         $this->articles[] = $article;
-        return this;
+        return $this;
     }
 
     /**
